@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px;
+    border-bottom: 2px solid black ;
+    margin-bottom: 50px;
+    font-size: 12px;
+    font-weight: lighter;
+
+}
+
+#high-scores {
+    color: purple;
+    
+}
+
+#time {
+    text-align: right;
+    color: black
+
+}
+
+ /*quiz title*/
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*quiz directions*/
+p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+ /*startQuiz button*/
+.btn {
+    background-color: purple;
+    color: white;
+    margin-left: 595px;
+    height: 50px;
+    padding: 15px 32px;
+    border-radius: 15px;
+    
+}
+
+ /*questionOne*/
+.question-one {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+ /*questionOne answerChoices*/
+.btn-questionOne-answerOne {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-left: 360px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    display: block;
+ }
+
+ .btn-questionOne-answerTwo {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    padding-right: 70px;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+ }
+
+ .btn-questionOne-answerThree {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left; 
+    padding-right: 90px; 
+    margin-left: 360px;
+    margin-bottom: 5px;
+    display: block;
+
+ }
+
+ .btn-questionOne-answerFour {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-right: 55px;
+    margin-left: 360px;
+    display: block;
+
+ }
+
+/*questionTwo*/
+.question-two {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    margin-right: 355px;
+    margin-left: 355px;
+    
+}
+
+/*questionTwo answerChoices*/
+.btn-questionTwo-answerOne {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 90px;
+
+ }
+
+ .btn-questionTwo-answerTwo {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 60px;
+  
+  }
+
+ .btn-questionTwo-answerThree {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 105px;
+
+ }
+
+ .btn-questionTwo-answerFour {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 80px;
+
+ }
+
+ /*questionThree*/
+ .question-three {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    margin-left: 360px;
+    margin-right: 360px;
+}
+
+  /*questionThree answerChoices*/
+ .btn-questionThree-answerOne {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 105px;
+
+ }
+
+ .btn-questionThree-answerTwo {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 65px;
+
+ }
+
+ .btn-questionThree-answerThree {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 80px;
+
+ }
+
+ .btn-questionThree-answerFour {
+    background-color: purple;
+    color: white;
+    height: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 360px;
+    display: block;
+    padding-right: 55px;
+
+ }
+
