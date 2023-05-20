@@ -378,18 +378,19 @@ var conclusionPage = function() {
     submitButton.textContent = "Submit"
     bodyTag.appendChild(submitButton)
 
+    // add event listener to submit button
     submitButton.addEventListener("click", function() {
-    // should save final score + initials in local storage. Look at examples from weather App to do this
-    // get data from local storage
-    // var highScores = JSON.parse(localStorage.getItem("highScores") || "[]")
-
+    // should save final score + initials in local storage. 
+    
     console.log('This is working');
 
-    // add current data to local storage
-    // example of what data should look like this side is text content of input box -> {"EP": 100} <- this side is the finalScore
-    //                                                                                          currentPlayer: finalScore
-    
-    // set into local storage
+    var input = document.querySelector(".initialsInput").value
+    // var initialsInput = "Initials"
+
+    //sets item to local storage
+    localStorage.setItem(input, JSON.stringify(finalScore))
+
+
 
     })
 
