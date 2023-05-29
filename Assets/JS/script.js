@@ -636,4 +636,162 @@ var finalPage = function() {
 
 
 
+// this function restarts quiz when called
+var restartQuiz = function() {
+
+    // clear finalPage content
+    var highScores = document.querySelector("h1")
+    highScores.remove()
+
+    var liButtonDiv = document.querySelector("div")
+    liButtonDiv.remove()
+
+     //selecting body tag
+     var bodyTag = document.querySelector("body");
+
+     // create Start Quiz page elements
+     var header = document.createElement("header")
+     bodyTag.appendChild(header)
+
+     var viewHighScore = document.createElement('p')
+     viewHighScore.className = 'high-scores'
+     viewHighScore.textContent = 'View High Scores'
+     header.appendChild(viewHighScore)
+
+     var p = document.createElement('p')
+     p.className = 'time'
+     p.textContent = 'Time Remaining:'
+     var span = document.createElement('span')
+     span.textContent = ''
+     span.setAttribute("id",'timeRemaining')
+     p.appendChild(span)
+     header.appendChild(p)
+
+     var introScreen = document.createElement('div')
+     introScreen.setAttribute('id', 'intro-screen')
+     bodyTag.appendChild(introScreen)
+
+     var title = document.createElement('h1')
+     title.textContent = 'Coding Challenge Quiz'
+     title.className = 'title'
+     introScreen.appendChild(title)
+
+     var directions = document.createElement('p')
+     directions.className = 'directions'
+     directions.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that the correct answers will add 20 seconds to your current score/time and incorrect answers will penalize your score/time by 20 seconds!"
+     introScreen.appendChild(directions)
+     
+
+     var beginQuiz = document.createElement('div')
+     beginQuiz.className = 'begin-quiz'
+     introScreen.appendChild(beginQuiz)
+
+     var startQuizButton = document.createElement('button')
+     startQuizButton.textContent = 'Start Quiz'
+     startQuizButton.className = 'btn'
+     startQuizButton.setAttribute('id', 'start-quiz')
+     startQuizButton.setAttribute('type', 'click')
+     beginQuiz.appendChild(startQuizButton)
+
+     // addEventListener for 'View High Scores" on restartQuiz() page
+     viewHighScore.addEventListener("click", function(){
+        
+        var bodyTag = document.querySelector("body")
+        bodyTag.remove()
+
+        // create new elements for 'View High Scores' page
+        var bodyTag = document.createElement("body")
+        document.documentElement.appendChild(bodyTag)
+
+        var highScores = document.createElement("h1");
+        highScores.className = "high-scores";
+        highScores.textContent = "High scores";
+        bodyTag.appendChild(highScores);
+    
+        // create div container for 'go back' button, 'clear scores' button, and list items
+        var liButtonDiv = document.createElement("div")
+        liButtonDiv.className = "li-button-div"
+        bodyTag.appendChild(liButtonDiv)
+    
+        // create go back button
+        var goBackButton = document.createElement("button")
+        goBackButton.className = "go-back-button"
+        goBackButton.textContent = "Go back"
+        liButtonDiv.appendChild(goBackButton)
+    
+        // create clear score button
+        var clearScoresButton = document.createElement("button")
+        clearScoresButton.className = "clear-scores-button"
+        clearScoresButton.textContent = "Clear high scores"
+        liButtonDiv.appendChild(clearScoresButton)
+        
+        // pull initials and score from local storage 
+        var allScores = JSON.parse(localStorage.getItem("finalScores") || "[]");
+        console.log('all scores', allScores);
+    
+        // sort items in finalScores in descending order by their 'score' value
+        var sortedScores = allScores.sort((a, b) => (a.score - b.score)).reverse()
+        console.log("before:", sortedScores);
+    
+        // limit array(list) to just top 5 highest scores
+        sortedScores = sortedScores.slice(0,5)
+        console.log("after:", sortedScores);
+    
+        
+    
+        // put scores onto page, loop over all sorted scores
+        for (var i = 0; i < sortedScores.length; i++) {
+            
+            // create list items and put inside liButtonDiv
+            var listItem = document.createElement("li")
+            listItem.className = "saved-score-item"
+            listItem.textContent = (JSON.stringify(sortedScores[i])).replace('{"initials":"', '')// removes unneeded characters from sortedScores[i] string
+            .replace('","score":', '-').replace('}', '')// removes unneeded characters from sortedScores[i] string, is connected to line above
+            listItem.setAttribute("type", "1")
+            liButtonDiv.appendChild(listItem)
+    
+        }
+    
+    
+        // add event listener to 'go back' button
+        goBackButton.addEventListener("click", function() {
+                
+            restartQuiz()
+    
+        })
+    
+    
+        // add event listener to 'clear scores' button
+        clearScoresButton.addEventListener('click', function() {
+    
+            listItem = document.querySelector('li')
+            listItem.remove()
+    
+            localStorage.clear()
+    
+        
+    
+        })
+
+     })
+
+     // add event listener to start quiz button
+    startQuizButton.addEventListener("click", function(){
+
+        alert("The quiz has begun, timer has started at 60 seconds!");
+        timer();
+        questionOne();
+
+
+
+    });
+
+
+
+}
+
+
+
+
+
 
