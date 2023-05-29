@@ -11,15 +11,30 @@ header {
 
 }
 
-h2 a {
+header .high-scores {
     color: purple;
     text-decoration: none;
-    margin-top: -30px;
+    margin-top: 0;
+    text-align: left;
+    font-size: small;
+    cursor: pointer;
     
+}
+
+header .high-scores:hover {
+   color: rgb(146, 91, 146);
 }
 
 .time {
     text-align: right;
+    color: black;
+    margin-top: -30px;
+    font-size: medium;
+
+}
+
+.timeRemaining {
+   text-align: right;
     color: black;
     margin-top: -30px;
     font-size: medium;
@@ -52,7 +67,13 @@ h2 a {
     height: 50px;
     padding: 15px 32px;
     border-radius: 15px;
+    cursor: pointer;
     
+}
+
+.btn:hover {
+   background-color: rgb(146, 91, 146);
+     
 }
 
  /*questionOne*/
@@ -75,7 +96,13 @@ h2 a {
     margin-bottom: 5px;
     padding-right: 20px;
     display: block;
+    cursor: pointer;
  }
+
+ .btn-questionOne-answerOne:hover {
+   background-color: rgb(146, 91, 146);
+   
+}
 
  .btn-questionOne-answerTwo {
     background-color: purple;
@@ -87,7 +114,12 @@ h2 a {
     margin-bottom: 5px;
     margin-left: 360px;
     display: block;
+    cursor: pointer;
  }
+
+ .btn-questionOne-answerTwo:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionOne-answerThree {
     background-color: purple;
@@ -99,8 +131,13 @@ h2 a {
     margin-left: 360px;
     margin-bottom: 5px;
     display: block;
+    cursor: pointer;
 
  }
+
+ .btn-questionOne-answerThree:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionOne-answerFour {
     background-color: purple;
@@ -112,8 +149,13 @@ h2 a {
     padding-right: 55px;
     margin-left: 360px;
     display: block;
+    cursor: pointer;
 
  }
+
+ .btn-questionOne-answerFour:hover {
+   background-color: rgb(146, 91, 146);
+}
 
 /*questionTwo*/
 .question-two {
@@ -138,8 +180,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 90px;
+    cursor: pointer;
 
  }
+
+ .btn-questionTwo-answerOne:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionTwo-answerTwo {
     background-color: purple;
@@ -151,8 +198,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 60px;
+    cursor: pointer;
   
   }
+
+  .btn-questionTwo-answerTwo:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionTwo-answerThree {
     background-color: purple;
@@ -164,8 +216,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 105px;
+    cursor: pointer;
 
  }
+
+ .btn-questionTwo-answerThree:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionTwo-answerFour {
     background-color: purple;
@@ -177,8 +234,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 80px;
+    cursor: pointer;
 
  }
+
+ .btn-questionTwo-answerFour:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  /*questionThree*/
  .question-three {
@@ -202,8 +264,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 105px;
+    cursor: pointer;
 
  }
+
+ .btn-questionThree-answerOne:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionThree-answerTwo {
     background-color: purple;
@@ -215,8 +282,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 65px;
+    cursor: pointer;
 
  }
+
+ .btn-questionThree-answerTwo:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionThree-answerThree {
     background-color: purple;
@@ -228,8 +300,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 80px;
+    cursor: pointer;
 
  }
+
+ .btn-questionThree-answerThree:hover {
+   background-color: rgb(146, 91, 146);
+}
 
  .btn-questionThree-answerFour {
     background-color: purple;
@@ -241,8 +318,13 @@ h2 a {
     margin-left: 360px;
     display: block;
     padding-right: 55px;
+    cursor: pointer;
 
  }
+
+ .btn-questionThree-answerFour:hover {
+   background-color: rgb(146, 91, 146);
+}
 
   /*conclusion*/
 .conclusion {
@@ -277,7 +359,69 @@ h2 a {
  /* submit score button */
 .submit-score-button {
    background-color: purple;
-    color: white;
+   border-radius: 15px;
+   color: white;
+   cursor: pointer;
+    
+}
+
+.submit-score-button:hover {
+   background-color: rgb(146, 91, 146);
+}
+
+/* high scores */
+.high-scores {
+   text-align: center;
+   font-size: 24px;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif;
    
+
+}
+
+.li-button-div {
+   top: 50%;
+   left: 50%;
+   /* transform: translate(-50%, -50%); */
+   
+
+}
+ 
+/* list items */
+.saved-score-item {
+   background: rgb(228, 216, 216);
+   width: 25%;
+   margin: auto
+   
+
+}
+
+
+/* go back button */
+.go-back-button {
+   background-color: purple;
+   color: white;
+   border-radius: 15px;
+   margin: auto;
+   cursor: pointer;
    
 }
+
+.go-back-button:hover {
+   background-color: rgb(146, 91, 146);
+}
+
+/* clear scores button */
+.clear-scores-button {
+   background-color: purple;
+   color: white;
+   border-radius: 15px;
+   margin: auto;
+   cursor: pointer;
+   
+}
+
+.clear-scores-button:hover {
+   background-color: rgb(146, 91, 146);
+}
+
