@@ -794,4 +794,86 @@ var restartQuiz = function() {
 
 
 
+// Variable to assign to addEventListener for 'View High Scores'
+var viewHighScores = document.querySelector('.high-scores')
 
+// add eventListener for 'View High Scores'
+viewHighScores.addEventListener('click', function(){
+    //selecting body tag
+    var bodyTag = document.querySelector("body")
+    bodyTag.remove()
+
+    // create new elements for 'View High Scores' page
+    var bodyTag = document.createElement("body")
+    document.documentElement.appendChild(bodyTag)
+
+     var highScores = document.createElement("h1");
+     highScores.className = "high-scores";
+     highScores.textContent = "High scores";
+     bodyTag.appendChild(highScores);
+ 
+     // create div container for 'go back' button, 'clear scores' button, and list items
+     var liButtonDiv = document.createElement("div")
+     liButtonDiv.className = "li-button-div"
+     bodyTag.appendChild(liButtonDiv)
+ 
+     // create go back button
+     var goBackButton = document.createElement("button")
+     goBackButton.className = "go-back-button"
+     goBackButton.textContent = "Go back"
+     liButtonDiv.appendChild(goBackButton)
+ 
+     // create clear score button
+     var clearScoresButton = document.createElement("button")
+     clearScoresButton.className = "clear-scores-button"
+     clearScoresButton.textContent = "Clear high scores"
+     liButtonDiv.appendChild(clearScoresButton)
+     
+     // pull initials and score from local storage 
+     var allScores = JSON.parse(localStorage.getItem("finalScores") || "[]");
+     console.log('all scores', allScores);
+ 
+     // sort items in finalScores in descending order by their 'score' value
+     var sortedScores = allScores.sort((a, b) => (a.score - b.score)).reverse()
+     console.log("before:", sortedScores);
+ 
+     // limit array(list) to just top 5 highest scores
+     sortedScores = sortedScores.slice(0,5)
+     console.log("after:", sortedScores);
+ 
+     
+ 
+     // put scores onto page, loop over all sorted scores
+     for (var i = 0; i < sortedScores.length; i++) {
+         
+         // create list items and put inside liButtonDiv
+         var listItem = document.createElement("li")
+         listItem.className = "saved-score-item"
+         listItem.textContent = (JSON.stringify(sortedScores[i])).replace('{"initials":"', '')// removes unneeded characters from sortedScores[i] string
+         .replace('","score":', '-').replace('}', '')// removes unneeded characters from sortedScores[i] string, is connected to line above
+         listItem.setAttribute("type", "1")
+         liButtonDiv.appendChild(listItem)
+ 
+     }
+ 
+ 
+     // add event listener to 'go back' button
+     goBackButton.addEventListener("click", function() {
+             
+         restartQuiz()
+ 
+     })
+ 
+ 
+     // add event listener to 'clear scores' button
+     clearScoresButton.addEventListener('click', function() {
+ 
+         listItem = document.querySelector('li')
+         listItem.remove()
+ 
+         localStorage.clear()
+   
+ 
+     })
+    
+})
