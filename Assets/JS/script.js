@@ -12,7 +12,7 @@ var countDown
 var startQuiz = function(){
     
     alert("The quiz has begun, timer has started at 60 seconds!");
-    timer();
+    // timer();
     questionOne();
 
 
