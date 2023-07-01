@@ -46,11 +46,13 @@ beginQuizEl.addEventListener("click", startQuiz);
 
             alert("Game over! The timer has run out. Please click Ok to save your score.");
 
+            // div elements from previous pages
+            var removeDiv = document.querySelector(".question-one");
+            removeDiv.remove();
+            console.log("removing div");
+
             conclusionPage()
-
-
-
-         }    
+         } 
         
     }, 1000);    //counts in milliseconds. 1000ms = 1second
 
@@ -64,40 +66,43 @@ beginQuizEl.addEventListener("click", startQuiz);
 // question one function
 var questionOne = function(){
 
-    //delete intro screen
-    var introScreen = document.querySelector("#intro-screen");
+    // remove intro screen div elements
+    var introScreen = document.querySelector(".intro-screen");
     introScreen.remove();
     console.log("removing intro screen");
 
     //selecting body tag
     var bodyTag = document.querySelector("body");
     
-    // create questionOneEl and add to body
+    // create questionOneEl div/elements and add to body
     var questionOneEl = document.createElement("div");
     questionOneEl.className = "question-one";
-    questionOneEl.textContent = "Array in JavaScript can be used to store ___________.";
+    var questionOneText = document.createElement("p")
+    questionOneText.className = "question-text"
+    questionOneText.textContent = "Array in JavaScript can be used to store ___________.";
+    questionOneEl.appendChild(questionOneText)
     bodyTag.appendChild(questionOneEl);
 
-    //create answer choices and add to body
+    //create answer choices and add to questionOne div/body
     var answerChoiceOne = document.createElement("button");
-    answerChoiceOne.className = "btn-questionOne-answerOne";
+    answerChoiceOne.classList.add("answer-button")
     answerChoiceOne.textContent = "1. numbers and strings";
-    bodyTag.appendChild(answerChoiceOne);
+    questionOneEl.appendChild(answerChoiceOne);
 
     var answerChoiceTwo = document.createElement("button");
-    answerChoiceTwo.className = "btn-questionOne-answerTwo";
+    answerChoiceTwo.classList.add("answer-button")
     answerChoiceTwo.textContent = "2. other arrays";
-    bodyTag.appendChild(answerChoiceTwo);
+    questionOneEl.appendChild(answerChoiceTwo);
 
     var answerChoiceThree = document.createElement("button");
-    answerChoiceThree.className = "btn-questionOne-answerThree";
+    answerChoiceThree.classList.add("answer-button")
     answerChoiceThree.textContent = "3. booleans";
-    bodyTag.appendChild(answerChoiceThree);
+    questionOneEl.appendChild(answerChoiceThree);
 
     var answerChoiceFour = document.createElement("button");
-    answerChoiceFour.className = "btn-questionOne-answerFour";
+    answerChoiceFour.classList.add("answer-button")
     answerChoiceFour.textContent = "4. all of the above";
-    bodyTag.appendChild(answerChoiceFour);
+    questionOneEl.appendChild(answerChoiceFour);
 
 
     // add event listener to buttons
@@ -106,6 +111,11 @@ var questionOne = function(){
         time -= 20
 
         alert(" Incorrect! User score is now "  + time + ".");
+
+        // remove questionOne div elements
+        var questionOneEl = document.querySelector(".question-one");
+        questionOneEl.remove();
+        console.log("removing questionOneEl");
 
         questionTwo()
 
@@ -118,6 +128,11 @@ var questionOne = function(){
 
         alert(" Incorrect! User score is now "  + time + ".");
 
+        // remove questionOne div elements
+        var questionOneEl = document.querySelector(".question-one");
+        questionOneEl.remove();
+        console.log("removing questionOneEl");
+
         questionTwo()
 
     })
@@ -127,6 +142,11 @@ var questionOne = function(){
         time -= 20
 
         alert(" Incorrect! User score is now "  + time + ".");
+
+        // remove questionOne div elements
+        var questionOneEl = document.querySelector(".question-one");
+        questionOneEl.remove();
+        console.log("removing questionOneEl");
 
         questionTwo()
     })
@@ -139,37 +159,42 @@ var questionOne = function(){
 
         console.log(" User Score is now " + time + ".");
 
+        // remove questionOne div elements
+        var questionOneEl = document.querySelector(".question-one");
+        questionOneEl.remove();
+        console.log("removing questionOneEl");
+
         questionTwo();
     })
 
 
      // if time is less or equal to 0, clear elements on questionOne so conclusionPage() can run in the timer()
-     if (time <= 0) {
+    //  if (time <= 0) {
 
 
-        //delete questionOneEl
-        var questionOneEl = document.querySelector("div");
-        questionOneEl.remove();
-        console.log("removing questionOneEl");
+        // remove questionOne div elements
+        // var questionOneEl = document.querySelector(".question-one");
+        // questionOneEl.remove();
+        // console.log("removing questionOneEl");
 
-        // remove answer buttons for questionOneEl
-        var answerChoiceOne = document.querySelector("button")
-        answerChoiceOne.remove();
-        console.log("removing answerChoiceOne");
+        // // remove answer buttons for questionOneEl
+        // var answerChoiceOne = document.querySelector("button")
+        // answerChoiceOne.remove();
+        // console.log("removing answerChoiceOne");
 
-        var answerChoiceTwo = document.querySelector("button")
-        answerChoiceTwo.remove();
-        console.log("removing answerChoiceTwo");  
+        // var answerChoiceTwo = document.querySelector("button")
+        // answerChoiceTwo.remove();
+        // console.log("removing answerChoiceTwo");  
 
-        var answerChoiceThree = document.querySelector("button")
-        answerChoiceThree.remove();
-        console.log("removing answerChoiceThree"); 
+        // var answerChoiceThree = document.querySelector("button")
+        // answerChoiceThree.remove();
+        // console.log("removing answerChoiceThree"); 
 
-        var answerChoiceFour = document.querySelector("button")
-        answerChoiceFour.remove();
-        console.log("removing answerChoiceFour"); 
+        // var answerChoiceFour = document.querySelector("button")
+        // answerChoiceFour.remove();
+        // console.log("removing answerChoiceFour"); 
 
-    } 
+    //   } 
 
  }
 
@@ -179,61 +204,58 @@ var questionOne = function(){
 //question two function
 var questionTwo = function() {
 
- 
-  //delete questionOneEl
-  var questionOneEl = document.querySelector("div");
-  questionOneEl.remove();
-  console.log("removing questionOneEl");
-
   // remove answer buttons for questionOneEl
-  var answerChoiceOne = document.querySelector("button")
-    answerChoiceOne.remove();
-    console.log("removing answerChoiceOne");
+//   var answerChoiceOne = document.querySelector("button")
+//     answerChoiceOne.remove();
+//     console.log("removing answerChoiceOne");
 
-  var answerChoiceTwo = document.querySelector("button")
-    answerChoiceTwo.remove();
-    console.log("removing answerChoiceTwo");  
+//   var answerChoiceTwo = document.querySelector("button")
+//     answerChoiceTwo.remove();
+//     console.log("removing answerChoiceTwo");  
 
-    var answerChoiceThree = document.querySelector("button")
-    answerChoiceThree.remove();
-    console.log("removing answerChoiceThree"); 
+//     var answerChoiceThree = document.querySelector("button")
+//     answerChoiceThree.remove();
+//     console.log("removing answerChoiceThree"); 
 
-    var answerChoiceFour = document.querySelector("button")
-    answerChoiceFour.remove();
-    console.log("removing answerChoiceFour"); 
+//     var answerChoiceFour = document.querySelector("button")
+//     answerChoiceFour.remove();
+//     console.log("removing answerChoiceFour"); 
 
     
 
     //selecting body tag
     var bodyTag = document.querySelector("body");
         
-    // create questionTwoEl and add to body
+    // create questionTwo div/elements and add to body
     var questionTwoEl = document.createElement("div");
     questionTwoEl.className = "question-two";
-    questionTwoEl.textContent = "String values must be enclosed within ___________ when being assigned to variables.";
+    var questionTwoText = document.createElement("p")
+    questionTwoText.className = 'question-text'
+    questionTwoText.textContent = "String values must be enclosed within ___________ when being assigned to variables.";
+    questionTwoEl.appendChild(questionTwoText)
     bodyTag.appendChild(questionTwoEl);
 
-    //create answer choices and add to body
+    //create answer choices and add to questionTwo div/body
     var answerChoiceOne = document.createElement("button");
-    answerChoiceOne.className = "btn-questionTwo-answerOne";
+    answerChoiceOne.classList.add("answer-button")
     answerChoiceOne.textContent = "1. commas";
-    bodyTag.appendChild(answerChoiceOne);
+    questionTwoEl.appendChild(answerChoiceOne);
 
     var answerChoiceTwo = document.createElement("button");
-    answerChoiceTwo.className = "btn-questionTwo-answerTwo";
+    answerChoiceTwo.classList.add("answer-button")
     answerChoiceTwo.textContent = "2. curly brackets";
-    bodyTag.appendChild(answerChoiceTwo);
+    questionTwoEl.appendChild(answerChoiceTwo);
 
 
     var answerChoiceThree = document.createElement("button");
-    answerChoiceThree.className = "btn-questionTwo-answerThree";
+    answerChoiceThree.classList.add("answer-button")
     answerChoiceThree.textContent = "3. quotes";
-    bodyTag.appendChild(answerChoiceThree);
+    questionTwoEl.appendChild(answerChoiceThree);
 
     var answerChoiceFour = document.createElement("button");
-    answerChoiceFour.className = "btn-questionTwo-answerFour";
+    answerChoiceFour.classList.add("answer-button")
     answerChoiceFour.textContent = "4. parenthesis";
-    bodyTag.appendChild(answerChoiceFour);   
+    questionTwoEl.appendChild(answerChoiceFour);   
         
     // add event listener to buttons
     answerChoiceOne.addEventListener('click', function(event) {
@@ -241,7 +263,12 @@ var questionTwo = function() {
         time -= 20
 
         alert(" Incorrect! User score is now "  + time + ".");
-        
+
+        // remove questionTwo div elements
+        var questionTwoEl = document.querySelector(".question-two");
+        questionTwoEl.remove();
+        console.log("removing questionTwoEl");
+
         questionThree()
     })
 
@@ -250,6 +277,11 @@ var questionTwo = function() {
         time -= 20
 
         alert(" Incorrect! User score is now "  + time + ".");
+
+        // remove questionTwo div elements
+        var questionTwoEl = document.querySelector(".question-two");
+        questionTwoEl.remove();
+        console.log("removing questionTwoEl");
 
         questionThree()
 
@@ -263,6 +295,11 @@ var questionTwo = function() {
 
         console.log( " User Score is now " + time + ".");
 
+        // remove questionTwo div elements
+        var questionTwoEl = document.querySelector(".question-two");
+        questionTwoEl.remove();
+        console.log("removing questionTwoEl");
+
         questionThree();
 
     })
@@ -274,37 +311,42 @@ var questionTwo = function() {
 
         alert(" Incorrect! User score is now "  + time + ".");
 
+        // remove questionTwo div elements
+        var questionTwoEl = document.querySelector(".question-two");
+        questionTwoEl.remove();
+        console.log("removing questionTwoEl");
+
         questionThree()
     })
 
     
 
     // if time is less or equal to 0, clear elements on questionTwo so conclusionPage() can run in the timer()
-    if (time <= 0) {
+    // if (time <= 0) {
 
-        // remove question two element
-        var questionTwoEl = document.querySelector("div");
-        questionTwoEl.remove();
-        console.log("removing questionTwoEl");
+    //     // remove question two div elements
+    //     var questionTwoEl = document.querySelector(".question-two");
+    //     questionTwoEl.remove();
+    //     console.log("removing questionTwoEl");
     
-        //remove answer buttons for questionTwoEl
-        var answerChoiceOne = document.querySelector("button")
-        answerChoiceOne.remove();
-        console.log("removing answerChoiceOne");
+    // //     //remove answer buttons for questionTwoEl
+    // //     // var answerChoiceOne = document.querySelector("button")
+    // //     // answerChoiceOne.remove();
+    // //     // console.log("removing answerChoiceOne");
     
-        var answerChoiceTwo = document.querySelector("button")
-        answerChoiceTwo.remove();
-        console.log("removing answerChoiceTwo");  
+    // //     // var answerChoiceTwo = document.querySelector("button")
+    // //     // answerChoiceTwo.remove();
+    // //     // console.log("removing answerChoiceTwo");  
     
-        var answerChoiceThree = document.querySelector("button")
-        answerChoiceThree.remove();
-        console.log("removing answerChoiceThree"); 
+    // //     // var answerChoiceThree = document.querySelector("button")
+    // //     // answerChoiceThree.remove();
+    // //     // console.log("removing answerChoiceThree"); 
     
-        var answerChoiceFour = document.querySelector("button")
-        answerChoiceFour.remove();
-        console.log("removing answerChoiceFour"); 
+    // //     // var answerChoiceFour = document.querySelector("button")
+    // //     // answerChoiceFour.remove();
+    // //     // console.log("removing answerChoiceFour"); 
         
-    }
+    // }
 
 
 }
@@ -316,64 +358,68 @@ var questionTwo = function() {
 // question three function
 var questionThree = function(){
 
-    var questionTwoEl = document.querySelector("div");
-    questionTwoEl.remove();
-    console.log("removing questionTwoEl");
-
     //remove answer buttons for questionTwoEl
-    var answerChoiceOne = document.querySelector("button")
-    answerChoiceOne.remove();
-    console.log("removing answerChoiceOne");
+    // var answerChoiceOne = document.querySelector("button")
+    // answerChoiceOne.remove();
+    // console.log("removing answerChoiceOne");
 
-    var answerChoiceTwo = document.querySelector("button")
-    answerChoiceTwo.remove();
-    console.log("removing answerChoiceTwo");  
+    // var answerChoiceTwo = document.querySelector("button")
+    // answerChoiceTwo.remove();
+    // console.log("removing answerChoiceTwo");  
 
-    var answerChoiceThree = document.querySelector("button")
-    answerChoiceThree.remove();
-    console.log("removing answerChoiceThree"); 
+    // var answerChoiceThree = document.querySelector("button")
+    // answerChoiceThree.remove();
+    // console.log("removing answerChoiceThree"); 
 
-    var answerChoiceFour = document.querySelector("button")
-    answerChoiceFour.remove();
-    console.log("removing answerChoiceFour"); 
+    // var answerChoiceFour = document.querySelector("button")
+    // answerChoiceFour.remove();
+    // console.log("removing answerChoiceFour"); 
 
 
     //selecting body tag
     var bodyTag = document.querySelector("body")
        
-    // create questionThreeEl and add to body
+    // create questionThree div/elements and add to body
     var questionThreeEl = document.createElement("div");
     questionThreeEl.className = "question-three";
-    questionThreeEl.textContent = "The condition in an if/else statement is enclosed with ___________.";
+    var questionThreeText = document.createElement("p");
+    questionThreeText.className = "question-text"
+    questionThreeText.textContent = "The condition in an if/else statement is enclosed with ___________.";
+    questionThreeEl.appendChild(questionThreeText);
     bodyTag.appendChild(questionThreeEl);
    
     //create answer choices and add to body
     var answerChoiceOne = document.createElement("button");
-    answerChoiceOne.className = "btn-questionThree-answerOne";
+    answerChoiceOne.classList.add("answer-button")
     answerChoiceOne.textContent = "1. quotes";
-    bodyTag.appendChild(answerChoiceOne);
+    questionThreeEl.appendChild(answerChoiceOne);
    
     var answerChoiceTwo = document.createElement("button");
-    answerChoiceTwo.className = "btn-questionThree-answerTwo";
+    answerChoiceTwo.classList.add("answer-button")
     answerChoiceTwo.textContent = "2. curly brackets";
-    bodyTag.appendChild(answerChoiceTwo);
+    questionThreeEl.appendChild(answerChoiceTwo);
    
    
     var answerChoiceThree = document.createElement("button");
-    answerChoiceThree.className = "btn-questionThree-answerThree";
+    answerChoiceThree.classList.add("answer-button")
     answerChoiceThree.textContent = "3. parenthesis";
-    bodyTag.appendChild(answerChoiceThree);
+    questionThreeEl.appendChild(answerChoiceThree);
    
     var answerChoiceFour = document.createElement("button");
-    answerChoiceFour.className = "btn-questionThree-answerFour";
+    answerChoiceFour.classList.add("answer-button")
     answerChoiceFour.textContent = "4. square brackets";
-    bodyTag.appendChild(answerChoiceFour);  
+    questionThreeEl.appendChild(answerChoiceFour);  
 
     answerChoiceOne.addEventListener('click', function(event){
 
         time -= 20
 
         alert(" Incorrect! User score is now "  + time + ".");
+
+        //remove questionThree div elements 
+        var questionThreeEl = document.querySelector(".question-three");
+        questionThreeEl.remove();
+        console.log("removing questionThree");
 
 
         conclusionPage()
@@ -389,6 +435,11 @@ var questionThree = function(){
 
         console.log("User score is now " + time + ".");
 
+        //remove questionThree div elements 
+        var questionThreeEl = document.querySelector(".question-three");
+        questionThreeEl.remove();
+        console.log("removing questionThree");
+
         
         conclusionPage();
 
@@ -402,6 +453,11 @@ var questionThree = function(){
 
         alert(" Incorrect! User score is now "  + time + ".");
 
+        //remove questionThree div elements 
+        var questionThreeEl = document.querySelector(".question-three");
+        questionThreeEl.remove();
+        console.log("removing questionThree");
+
 
         conclusionPage()
 
@@ -413,6 +469,11 @@ var questionThree = function(){
 
         alert(" Incorrect! User score is now "  + time + ".");
 
+        //remove questionThree div elements 
+        var questionThreeEl = document.querySelector(".question-three");
+        questionThreeEl.remove();
+        console.log("removing questionThree");
+
        
         conclusionPage()
 
@@ -421,35 +482,35 @@ var questionThree = function(){
 
 
     // if time is less or equal to 0, clear elements on questionThree so conclusionPage() can run in the timer()
-     if (time <= 0) {   
+    //  if (time <= 0) {   
 
 
-        //remove questionThreeEl
-        var questionThreeEl = document.querySelector("div");
-        questionThreeEl.remove();
-        console.log("removing questionTwoEl");
+    //     //remove questionThree div elements
+    //     var questionThreeEl = document.querySelector(".question-three");
+    //     questionThreeEl.remove();
+    //     console.log("removing questionThreeEl");
 
-        //remove answer buttons for questionThreeEl
-        var answerChoiceOne = document.querySelector("button")
-        answerChoiceOne.remove();
-        console.log("removing answerChoiceOne");
+    // //     //remove answer buttons for questionThreeEl
+    // //     // var answerChoiceOne = document.querySelector("button")
+    // //     // answerChoiceOne.remove();
+    // //     // console.log("removing answerChoiceOne");
 
-        var answerChoiceTwo = document.querySelector("button")
-        answerChoiceTwo.remove();
-        console.log("removing answerChoiceTwo");  
+    // //     // var answerChoiceTwo = document.querySelector("button")
+    // //     // answerChoiceTwo.remove();
+    // //     // console.log("removing answerChoiceTwo");  
 
-        var answerChoiceThree = document.querySelector("button")
-        answerChoiceThree.remove();
-        console.log("removing answerChoiceThree"); 
+    // //     // var answerChoiceThree = document.querySelector("button")
+    // //     // answerChoiceThree.remove();
+    // //     // console.log("removing answerChoiceThree"); 
 
-        var answerChoiceFour = document.querySelector("button")
-        answerChoiceFour.remove();
-        console.log("removing answerChoiceFour"); 
+    // //     // var answerChoiceFour = document.querySelector("button")
+    // //     // answerChoiceFour.remove();
+    // //     // console.log("removing answerChoiceFour"); 
 
         
 
 
-    } 
+    // } 
 }
 
 
@@ -470,55 +531,63 @@ var conclusionPage = function() {
     var endTimer = document.querySelector("#timeRemaining")
     endTimer.remove()
 
-    //remove questionThreeEl
-    var questionThreeEl = document.querySelector("div");
-    questionThreeEl.remove();
-    console.log("removing questionTwoEl");
-
+   
     //remove answer buttons for questionThreeEl
-    var answerChoiceOne = document.querySelector("button")
-    answerChoiceOne.remove();
-    console.log("removing answerChoiceOne");
+    // var answerChoiceOne = document.querySelector("button")
+    // answerChoiceOne.remove();
+    // console.log("removing answerChoiceOne");
 
-    var answerChoiceTwo = document.querySelector("button")
-    answerChoiceTwo.remove();
-    console.log("removing answerChoiceTwo");  
+    // var answerChoiceTwo = document.querySelector("button")
+    // answerChoiceTwo.remove();
+    // console.log("removing answerChoiceTwo");  
 
-    var answerChoiceThree = document.querySelector("button")
-    answerChoiceThree.remove();
-    console.log("removing answerChoiceThree"); 
+    // var answerChoiceThree = document.querySelector("button")
+    // answerChoiceThree.remove();
+    // console.log("removing answerChoiceThree"); 
 
-    var answerChoiceFour = document.querySelector("button")
-    answerChoiceFour.remove();
-    console.log("removing answerChoiceFour"); 
+    // var answerChoiceFour = document.querySelector("button")
+    // answerChoiceFour.remove();
+    // console.log("removing answerChoiceFour"); 
 
     //selecting body tag
     var bodyTag = document.querySelector("body")
+
+    // create conclusion div
+    var conclusionDiv = document.createElement('div')
+    conclusionDiv.className = "conclusion-div"
+    bodyTag.appendChild(conclusionDiv)
     
+
+    // put timer back on page with finalScore as its value
+    var headerEl = document.querySelector('header')
+    var timeValue = document.querySelector('.time')
+    headerEl.appendChild(timeValue)
+    var spanTime = document.createElement('span')
+    spanTime.textContent = finalScore
+    spanTime.setAttribute("id",'timeRemaining')
+    timeValue.appendChild(spanTime)
+
     // create elements for conclusion page
     var conclusion = document.createElement("h1");
     conclusion.className = "conclusion";
     conclusion.textContent = "All Done!";
-    bodyTag.appendChild(conclusion);
+    conclusionDiv.appendChild(conclusion);
 
     var message = document.createElement("p");
     message.className = "message";
     message.textContent = "Your final score is: " + finalScore;
-    bodyTag.appendChild(message);
-
-    var initials = document.createElement("p")
-    initials.className = "initials"
-    initials.textContent = "Enter initials:"
-    bodyTag.appendChild(initials)
+    conclusionDiv.appendChild(message);
 
     var input = document.createElement("input")
+    input.placeholder = "Enter Initials"
     input.className = "initialsInput"
-    bodyTag.appendChild(input)
+    conclusionDiv.appendChild(input)
 
     var submitButton = document.createElement("button")
     submitButton.className = "submit-score-button"
     submitButton.textContent = "Submit"
-    bodyTag.appendChild(submitButton)
+    conclusionDiv.appendChild(submitButton)
+
 
     // add event listener to submit button
     submitButton.addEventListener("click", function() {
@@ -569,8 +638,8 @@ var finalPage = function() {
     var message = document.querySelector(".message")
     message.remove();
 
-    var initials = document.querySelector(".initials")
-    initials.remove();
+    // var initials = document.querySelector(".initials")
+    // initials.remove();
 
     var initialInput = document.querySelector(".initialsInput")
     initialInput.remove();
@@ -582,29 +651,17 @@ var finalPage = function() {
     //selecting body tag
     var bodyTag = document.querySelector("body")
 
+     // create div container for 'go back' button, 'clear scores' button, and list items
+     var liButtonDiv = document.createElement("div")
+     liButtonDiv.className = "li-button-div"
+     bodyTag.appendChild(liButtonDiv)
+
     // create elements for final page
     var highScores = document.createElement("h1");
     highScores.className = "high-scores";
     highScores.textContent = "High scores";
-    bodyTag.appendChild(highScores);
+    liButtonDiv.appendChild(highScores);
 
-    // create div container for 'go back' button, 'clear scores' button, and list items
-    var liButtonDiv = document.createElement("div")
-    liButtonDiv.className = "li-button-div"
-    bodyTag.appendChild(liButtonDiv)
-
-    // create go back button
-    var goBackButton = document.createElement("button")
-    goBackButton.className = "go-back-button"
-    goBackButton.textContent = "Go back"
-    liButtonDiv.appendChild(goBackButton)
-
-    // create clear score button
-    var clearScoresButton = document.createElement("button")
-    clearScoresButton.className = "clear-scores-button"
-    clearScoresButton.textContent = "Clear high scores"
-    liButtonDiv.appendChild(clearScoresButton)
-    
     // pull initials and score from local storage 
     var allScores = JSON.parse(localStorage.getItem("finalScores") || "[]");
     console.log('all scores', allScores);
@@ -631,6 +688,18 @@ var finalPage = function() {
         liButtonDiv.appendChild(listItem)
 
     }
+
+     // create go back button
+     var goBackButton = document.createElement("button")
+     goBackButton.className = "go-back-button"
+     goBackButton.textContent = "Go back"
+     liButtonDiv.appendChild(goBackButton)
+ 
+     // create clear score button
+     var clearScoresButton = document.createElement("button")
+     clearScoresButton.className = "clear-scores-button"
+     clearScoresButton.textContent = "Clear high scores"
+     liButtonDiv.appendChild(clearScoresButton)
 
 
     // add event listener to 'go back' button
@@ -672,7 +741,7 @@ var restartQuiz = function() {
     var highScores = document.querySelector("h1")
     highScores.remove()
 
-    var liButtonDiv = document.querySelector("div")
+    var liButtonDiv = document.querySelector(".li-button-div")
     liButtonDiv.remove()
 
      //selecting body tag
@@ -697,7 +766,7 @@ var restartQuiz = function() {
      header.appendChild(p)
 
      var introScreen = document.createElement('div')
-     introScreen.setAttribute('id', 'intro-screen')
+     introScreen.className = ('intro-screen')
      bodyTag.appendChild(introScreen)
 
      var title = document.createElement('h1')
@@ -709,18 +778,13 @@ var restartQuiz = function() {
      directions.className = 'directions'
      directions.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that the correct answers will add 20 seconds to your current score/time and incorrect answers will penalize your score/time by 20 seconds!"
      introScreen.appendChild(directions)
-     
-
-     var beginQuiz = document.createElement('div')
-     beginQuiz.className = 'begin-quiz'
-     introScreen.appendChild(beginQuiz)
 
      var startQuizButton = document.createElement('button')
      startQuizButton.textContent = 'Start Quiz'
      startQuizButton.className = 'btn'
      startQuizButton.setAttribute('id', 'start-quiz')
      startQuizButton.setAttribute('type', 'click')
-     beginQuiz.appendChild(startQuizButton)
+     introScreen.appendChild(startQuizButton)
 
      // addEventListener for 'View High Scores" on restartQuiz() page
      viewHighScore.addEventListener("click", function(){
@@ -751,6 +815,11 @@ var restartQuiz = function() {
 
 // add eventListener for 'View High Scores'
 var viewHighScores = function(){
+
+    // stop timer
+    clearInterval(countDown)
+
+
     //selecting body tag
     var bodyTag = document.querySelector("body")
     bodyTag.remove()
@@ -768,18 +837,6 @@ var viewHighScores = function(){
      var liButtonDiv = document.createElement("div")
      liButtonDiv.className = "li-button-div"
      bodyTag.appendChild(liButtonDiv)
- 
-     // create go back button
-     var goBackButton = document.createElement("button")
-     goBackButton.className = "go-back-button"
-     goBackButton.textContent = "Go back"
-     liButtonDiv.appendChild(goBackButton)
- 
-     // create clear score button
-     var clearScoresButton = document.createElement("button")
-     clearScoresButton.className = "clear-scores-button"
-     clearScoresButton.textContent = "Clear high scores"
-     liButtonDiv.appendChild(clearScoresButton)
      
      // pull initials and score from local storage 
      var allScores = JSON.parse(localStorage.getItem("finalScores") || "[]");
@@ -807,6 +864,18 @@ var viewHighScores = function(){
          liButtonDiv.appendChild(listItem)
  
      }
+
+      // create go back button
+      var goBackButton = document.createElement("button")
+      goBackButton.className = "go-back-button"
+      goBackButton.textContent = "Go back"
+      liButtonDiv.appendChild(goBackButton)
+  
+      // create clear score button
+      var clearScoresButton = document.createElement("button")
+      clearScoresButton.className = "clear-scores-button"
+      clearScoresButton.textContent = "Clear high scores"
+      liButtonDiv.appendChild(clearScoresButton)
  
  
 //      // add event listener to 'go back' button
@@ -843,6 +912,6 @@ viewHighScore.addEventListener("click", function(){
         
     viewHighScores()
 
-  })
+})
 
 
