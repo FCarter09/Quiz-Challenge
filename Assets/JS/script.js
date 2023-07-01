@@ -12,7 +12,7 @@ var countDown
 var startQuiz = function(){
     
     alert("The quiz has begun, timer has started at 60 seconds!");
-    // timer();
+    timer();
     questionOne();
 
 
@@ -47,8 +47,8 @@ beginQuizEl.addEventListener("click", startQuiz);
             alert("Game over! The timer has run out. Please click Ok to save your score.");
 
             // div elements from previous pages
-            var removeDiv = document.querySelector(".question-one");
-            removeDiv.remove();
+            var removeQuestionOneDiv = document.querySelector(".question-one");
+            removeQuestionOneDiv.remove();
             console.log("removing div");
 
             conclusionPage()
@@ -167,35 +167,6 @@ var questionOne = function(){
         questionTwo();
     })
 
-
-     // if time is less or equal to 0, clear elements on questionOne so conclusionPage() can run in the timer()
-    //  if (time <= 0) {
-
-
-        // remove questionOne div elements
-        // var questionOneEl = document.querySelector(".question-one");
-        // questionOneEl.remove();
-        // console.log("removing questionOneEl");
-
-        // // remove answer buttons for questionOneEl
-        // var answerChoiceOne = document.querySelector("button")
-        // answerChoiceOne.remove();
-        // console.log("removing answerChoiceOne");
-
-        // var answerChoiceTwo = document.querySelector("button")
-        // answerChoiceTwo.remove();
-        // console.log("removing answerChoiceTwo");  
-
-        // var answerChoiceThree = document.querySelector("button")
-        // answerChoiceThree.remove();
-        // console.log("removing answerChoiceThree"); 
-
-        // var answerChoiceFour = document.querySelector("button")
-        // answerChoiceFour.remove();
-        // console.log("removing answerChoiceFour"); 
-
-    //   } 
-
  }
 
 
@@ -203,26 +174,7 @@ var questionOne = function(){
 
 //question two function
 var questionTwo = function() {
-
-  // remove answer buttons for questionOneEl
-//   var answerChoiceOne = document.querySelector("button")
-//     answerChoiceOne.remove();
-//     console.log("removing answerChoiceOne");
-
-//   var answerChoiceTwo = document.querySelector("button")
-//     answerChoiceTwo.remove();
-//     console.log("removing answerChoiceTwo");  
-
-//     var answerChoiceThree = document.querySelector("button")
-//     answerChoiceThree.remove();
-//     console.log("removing answerChoiceThree"); 
-
-//     var answerChoiceFour = document.querySelector("button")
-//     answerChoiceFour.remove();
-//     console.log("removing answerChoiceFour"); 
-
     
-
     //selecting body tag
     var bodyTag = document.querySelector("body");
         
@@ -319,36 +271,6 @@ var questionTwo = function() {
         questionThree()
     })
 
-    
-
-    // if time is less or equal to 0, clear elements on questionTwo so conclusionPage() can run in the timer()
-    // if (time <= 0) {
-
-    //     // remove question two div elements
-    //     var questionTwoEl = document.querySelector(".question-two");
-    //     questionTwoEl.remove();
-    //     console.log("removing questionTwoEl");
-    
-    // //     //remove answer buttons for questionTwoEl
-    // //     // var answerChoiceOne = document.querySelector("button")
-    // //     // answerChoiceOne.remove();
-    // //     // console.log("removing answerChoiceOne");
-    
-    // //     // var answerChoiceTwo = document.querySelector("button")
-    // //     // answerChoiceTwo.remove();
-    // //     // console.log("removing answerChoiceTwo");  
-    
-    // //     // var answerChoiceThree = document.querySelector("button")
-    // //     // answerChoiceThree.remove();
-    // //     // console.log("removing answerChoiceThree"); 
-    
-    // //     // var answerChoiceFour = document.querySelector("button")
-    // //     // answerChoiceFour.remove();
-    // //     // console.log("removing answerChoiceFour"); 
-        
-    // }
-
-
 }
 
 
@@ -357,24 +279,6 @@ var questionTwo = function() {
 
 // question three function
 var questionThree = function(){
-
-    //remove answer buttons for questionTwoEl
-    // var answerChoiceOne = document.querySelector("button")
-    // answerChoiceOne.remove();
-    // console.log("removing answerChoiceOne");
-
-    // var answerChoiceTwo = document.querySelector("button")
-    // answerChoiceTwo.remove();
-    // console.log("removing answerChoiceTwo");  
-
-    // var answerChoiceThree = document.querySelector("button")
-    // answerChoiceThree.remove();
-    // console.log("removing answerChoiceThree"); 
-
-    // var answerChoiceFour = document.querySelector("button")
-    // answerChoiceFour.remove();
-    // console.log("removing answerChoiceFour"); 
-
 
     //selecting body tag
     var bodyTag = document.querySelector("body")
@@ -480,37 +384,6 @@ var questionThree = function(){
 
     })
 
-
-    // if time is less or equal to 0, clear elements on questionThree so conclusionPage() can run in the timer()
-    //  if (time <= 0) {   
-
-
-    //     //remove questionThree div elements
-    //     var questionThreeEl = document.querySelector(".question-three");
-    //     questionThreeEl.remove();
-    //     console.log("removing questionThreeEl");
-
-    // //     //remove answer buttons for questionThreeEl
-    // //     // var answerChoiceOne = document.querySelector("button")
-    // //     // answerChoiceOne.remove();
-    // //     // console.log("removing answerChoiceOne");
-
-    // //     // var answerChoiceTwo = document.querySelector("button")
-    // //     // answerChoiceTwo.remove();
-    // //     // console.log("removing answerChoiceTwo");  
-
-    // //     // var answerChoiceThree = document.querySelector("button")
-    // //     // answerChoiceThree.remove();
-    // //     // console.log("removing answerChoiceThree"); 
-
-    // //     // var answerChoiceFour = document.querySelector("button")
-    // //     // answerChoiceFour.remove();
-    // //     // console.log("removing answerChoiceFour"); 
-
-        
-
-
-    // } 
 }
 
 
@@ -531,23 +404,6 @@ var conclusionPage = function() {
     var endTimer = document.querySelector("#timeRemaining")
     endTimer.remove()
 
-   
-    //remove answer buttons for questionThreeEl
-    // var answerChoiceOne = document.querySelector("button")
-    // answerChoiceOne.remove();
-    // console.log("removing answerChoiceOne");
-
-    // var answerChoiceTwo = document.querySelector("button")
-    // answerChoiceTwo.remove();
-    // console.log("removing answerChoiceTwo");  
-
-    // var answerChoiceThree = document.querySelector("button")
-    // answerChoiceThree.remove();
-    // console.log("removing answerChoiceThree"); 
-
-    // var answerChoiceFour = document.querySelector("button")
-    // answerChoiceFour.remove();
-    // console.log("removing answerChoiceFour"); 
 
     //selecting body tag
     var bodyTag = document.querySelector("body")
@@ -638,9 +494,6 @@ var finalPage = function() {
     var message = document.querySelector(".message")
     message.remove();
 
-    // var initials = document.querySelector(".initials")
-    // initials.remove();
-
     var initialInput = document.querySelector(".initialsInput")
     initialInput.remove();
 
@@ -651,10 +504,10 @@ var finalPage = function() {
     //selecting body tag
     var bodyTag = document.querySelector("body")
 
-     // create div container for 'go back' button, 'clear scores' button, and list items
-     var liButtonDiv = document.createElement("div")
-     liButtonDiv.className = "li-button-div"
-     bodyTag.appendChild(liButtonDiv)
+    // create div container for 'go back' button, 'clear scores' button, and list items
+    var liButtonDiv = document.createElement("div")
+    liButtonDiv.className = "li-button-div"
+    bodyTag.appendChild(liButtonDiv)
 
     // create elements for final page
     var highScores = document.createElement("h1");

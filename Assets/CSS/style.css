@@ -86,7 +86,6 @@ header .high-scores:hover {
 .question-one, .question-two, .question-three {
    display: flex, inline-block;
    align-items: center;
-   border: 1px solid red;
 
 }
 
