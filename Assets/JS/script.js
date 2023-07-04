@@ -15,6 +15,8 @@ var startQuiz = function(){
     timer();
     questionOne();
 
+    
+
 
 }
 
@@ -33,6 +35,7 @@ beginQuizEl.addEventListener("click", startQuiz);
  var timer = function() {
    
     var timeRemaining = document.querySelector("#timeRemaining")
+  
 
      // starts timer countdown starting from value of timeLeft
      countDown = setInterval(function() {
@@ -46,13 +49,17 @@ beginQuizEl.addEventListener("click", startQuiz);
 
             alert("Game over! The timer has run out. Please click Ok to save your score.");
 
-            // div elements from previous pages
-            var removeQuestionOneDiv = document.querySelector(".question-one");
-            removeQuestionOneDiv.remove();
-            console.log("removing div");
+            // remove question div elements so conclusionPage renders properly when timer expires
+            var questionOneDiv = document.querySelector(".question");
+            questionOneDiv.remove();
+            console.log("removing questionOneDiv");
 
+          
+       
             conclusionPage()
-         } 
+
+            
+         }
         
     }, 1000);    //counts in milliseconds. 1000ms = 1second
 
@@ -76,7 +83,8 @@ var questionOne = function(){
     
     // create questionOneEl div/elements and add to body
     var questionOneEl = document.createElement("div");
-    questionOneEl.className = "question-one";
+    questionOneEl.className = "question";
+    questionOneEl.setAttribute("id",'question-one')
     var questionOneText = document.createElement("p")
     questionOneText.className = "question-text"
     questionOneText.textContent = "Array in JavaScript can be used to store ___________.";
@@ -113,8 +121,8 @@ var questionOne = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionOne div elements
-        var questionOneEl = document.querySelector(".question-one");
-        questionOneEl.remove();
+        var questionOne = document.querySelector("#question-one");
+        questionOne.remove();
         console.log("removing questionOneEl");
 
         questionTwo()
@@ -129,8 +137,8 @@ var questionOne = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionOne div elements
-        var questionOneEl = document.querySelector(".question-one");
-        questionOneEl.remove();
+        var questionOne = document.querySelector("#question-one");
+        questionOne.remove();
         console.log("removing questionOneEl");
 
         questionTwo()
@@ -144,8 +152,8 @@ var questionOne = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionOne div elements
-        var questionOneEl = document.querySelector(".question-one");
-        questionOneEl.remove();
+        var questionOne = document.querySelector("#question-one");
+        questionOne.remove();
         console.log("removing questionOneEl");
 
         questionTwo()
@@ -157,12 +165,10 @@ var questionOne = function(){
 
         alert(" Correct! You've earned 20 points. User score is now "  + time + ".");
 
-        console.log(" User Score is now " + time + ".");
-
-        // remove questionOne div elements
-        var questionOneEl = document.querySelector(".question-one");
-        questionOneEl.remove();
-        console.log("removing questionOneEl");
+         // remove questionOne div elements
+         var questionOne = document.querySelector("#question-one");
+         questionOne.remove();
+         console.log("removing questionOneEl");
 
         questionTwo();
     })
@@ -180,8 +186,9 @@ var questionTwo = function() {
         
     // create questionTwo div/elements and add to body
     var questionTwoEl = document.createElement("div");
-    questionTwoEl.className = "question-two";
-    var questionTwoText = document.createElement("p")
+    questionTwoEl.className = "question"
+    questionTwoEl.setAttribute("id",'question-two')
+    var questionTwoText = document.createElement("p");
     questionTwoText.className = 'question-text'
     questionTwoText.textContent = "String values must be enclosed within ___________ when being assigned to variables.";
     questionTwoEl.appendChild(questionTwoText)
@@ -217,8 +224,8 @@ var questionTwo = function() {
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionTwo div elements
-        var questionTwoEl = document.querySelector(".question-two");
-        questionTwoEl.remove();
+        var questionTwo = document.querySelector("#question-two");
+        questionTwo.remove();
         console.log("removing questionTwoEl");
 
         questionThree()
@@ -231,8 +238,8 @@ var questionTwo = function() {
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionTwo div elements
-        var questionTwoEl = document.querySelector(".question-two");
-        questionTwoEl.remove();
+        var questionTwo = document.querySelector("#question-two");
+        questionTwo.remove();
         console.log("removing questionTwoEl");
 
         questionThree()
@@ -248,8 +255,8 @@ var questionTwo = function() {
         console.log( " User Score is now " + time + ".");
 
         // remove questionTwo div elements
-        var questionTwoEl = document.querySelector(".question-two");
-        questionTwoEl.remove();
+        var questionTwo = document.querySelector("#question-two");
+        questionTwo.remove();
         console.log("removing questionTwoEl");
 
         questionThree();
@@ -264,8 +271,8 @@ var questionTwo = function() {
         alert(" Incorrect! User score is now "  + time + ".");
 
         // remove questionTwo div elements
-        var questionTwoEl = document.querySelector(".question-two");
-        questionTwoEl.remove();
+        var questionTwo = document.querySelector("#question-two");
+        questionTwo.remove();
         console.log("removing questionTwoEl");
 
         questionThree()
@@ -285,7 +292,8 @@ var questionThree = function(){
        
     // create questionThree div/elements and add to body
     var questionThreeEl = document.createElement("div");
-    questionThreeEl.className = "question-three";
+    questionThreeEl.className = "question";
+    questionThreeEl.setAttribute("id",'question-three')
     var questionThreeText = document.createElement("p");
     questionThreeText.className = "question-text"
     questionThreeText.textContent = "The condition in an if/else statement is enclosed with ___________.";
@@ -321,8 +329,8 @@ var questionThree = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         //remove questionThree div elements 
-        var questionThreeEl = document.querySelector(".question-three");
-        questionThreeEl.remove();
+        var questionThree = document.querySelector("#question-three");
+        questionThree.remove();
         console.log("removing questionThree");
 
 
@@ -340,8 +348,8 @@ var questionThree = function(){
         console.log("User score is now " + time + ".");
 
         //remove questionThree div elements 
-        var questionThreeEl = document.querySelector(".question-three");
-        questionThreeEl.remove();
+        var questionThree = document.querySelector("#question-three");
+        questionThree.remove();
         console.log("removing questionThree");
 
         
@@ -358,8 +366,8 @@ var questionThree = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         //remove questionThree div elements 
-        var questionThreeEl = document.querySelector(".question-three");
-        questionThreeEl.remove();
+        var questionThree = document.querySelector("#question-three");
+        questionThree.remove();
         console.log("removing questionThree");
 
 
@@ -374,8 +382,8 @@ var questionThree = function(){
         alert(" Incorrect! User score is now "  + time + ".");
 
         //remove questionThree div elements 
-        var questionThreeEl = document.querySelector(".question-three");
-        questionThreeEl.remove();
+        var questionThree = document.querySelector("#question-three");
+        questionThree.remove();
         console.log("removing questionThree");
 
        
@@ -766,5 +774,12 @@ viewHighScore.addEventListener("click", function(){
     viewHighScores()
 
 })
+
+
+
+
+            
+
+           
 
 
