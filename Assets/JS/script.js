@@ -50,8 +50,8 @@ beginQuizEl.addEventListener("click", startQuiz);
             alert("Game over! The timer has run out. Please click Ok to save your score.");
 
             // remove question div elements so conclusionPage renders properly when timer expires
-            var questionOneDiv = document.querySelector(".question");
-            questionOneDiv.remove();
+            var questionDiv = document.querySelector(".question");
+            questionDiv.remove();
             console.log("removing questionOneDiv");
 
           
