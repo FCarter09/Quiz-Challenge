@@ -426,7 +426,7 @@ var questionThree = function(){
         // create text to notify user of current score and if answer is correct/incorrect 
         var noteText = document.createElement('p')
         noteText.className = 'answer-note'
-        noteText.textContent = " Correct! You've earned 20 points. User score is now "  + time + "."
+        noteText.textContent = " Correct! You've earned 20 points. Your score is now "  + time + "."
         questionThreeEl.appendChild(noteText)
 
         // delay execution of conclusionPage() to allow user enough time to read notification of score 
