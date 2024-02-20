@@ -124,10 +124,18 @@ header .high-scores:hover {
    
 }
 
+/* notification when answer is clicked */
 .answer-note {
  font-style: italic;
  color: grey;
  margin-left: 375px;
+
+}
+
+/* start quiz message */
+.start-notification {
+   font-style: italic;
+   color: grey;
 
 }
 

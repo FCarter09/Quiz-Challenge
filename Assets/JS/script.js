@@ -10,10 +10,20 @@ var countDown
  
 // start quiz on intro page
 var startQuiz = function(){
+
+    var startQuizMessage = document.querySelector('.start-notification')
+    startQuizMessage.textContent = "The quiz has begun, timer has started at 60 seconds!"
+
+    // gives user time to read startQuizMessage before proceeding to quiz
+    setTimeout(() => {
+
+        // alert("The quiz has begun, timer has started at 60 seconds!");
+        timer();
+        questionOne();
+        
+    }, 2000);
     
-    alert("The quiz has begun, timer has started at 60 seconds!");
-    timer();
-    questionOne();
+    
 
 }
 
