@@ -124,6 +124,13 @@ header .high-scores:hover {
    
 }
 
+.answer-note {
+ font-style: italic;
+ color: grey;
+ margin-left: 375px;
+
+}
+
   /*conclusion*/
 .conclusion {
    text-align: center;
@@ -230,26 +237,26 @@ header .high-scores:hover {
 /**************** Media Queries *********************/
 
 @media screen and (max-width: 850px) { 
-   .question-text, .answer-button {
+   .question-text, .answer-button, .answer-note  {
       margin-left: 250px
    }
 }
 
 @media screen and (max-width: 720px) { 
-   .question-text, .answer-button {
+   .question-text, .answer-button, .answer-note  {
       margin-left: 200px
    }
 }
 
 
 @media screen and (max-width: 580px) { 
-   .question-text, .answer-button {
+   .question-text, .answer-button, .answer-note  {
       margin-left: 100px
    }
 }
 
 @media screen and (max-width: 430px) { 
-   .question-text, .answer-button {
+   .question-text, .answer-button, .answer-note  {
       margin-left: 50px
    }
 }

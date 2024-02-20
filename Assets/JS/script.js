@@ -15,9 +15,6 @@ var startQuiz = function(){
     timer();
     questionOne();
 
-    
-
-
 }
 
 
@@ -114,63 +111,102 @@ var questionOne = function(){
 
 
     // add event listener to buttons
-    answerChoiceOne.addEventListener('click', function(event) {
+    answerChoiceOne.addEventListener('click', function() {
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionOneEl.appendChild(noteText)
 
-        // remove questionOne div elements
-        var questionOne = document.querySelector("#question-one");
-        questionOne.remove();
-        console.log("removing questionOneEl");
+        // delay execution of questionTwo() to allow user enough time to read notification of score 
+        setTimeout(() => {
+            
+            // remove questionOne div elements
+            var questionOne = document.querySelector("#question-one");
+            questionOne.remove();
+            console.log("removing questionOneEl");
 
-        questionTwo()
+            questionTwo()
 
+            
+        }, 2000);
        
     })
 
-    answerChoiceTwo.addEventListener('click', function(event){
+    answerChoiceTwo.addEventListener('click', function(){
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionOneEl.appendChild(noteText)
 
-        // remove questionOne div elements
-        var questionOne = document.querySelector("#question-one");
-        questionOne.remove();
-        console.log("removing questionOneEl");
+        // delay execution of questionTwo() to allow user enough time to read notification of score 
+        setTimeout(() => {
+            
+            // remove questionOne div elements
+            var questionOne = document.querySelector("#question-one");
+            questionOne.remove();
+            console.log("removing questionOneEl");
 
-        questionTwo()
+            questionTwo()
+
+            
+        }, 2000);
 
     })
 
-    answerChoiceThree.addEventListener('click', function(event){
+    // create text to notify user of current score and if answer is correct/incorrect 
+    answerChoiceThree.addEventListener('click', function(){
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionOneEl.appendChild(noteText)
 
-        // remove questionOne div elements
-        var questionOne = document.querySelector("#question-one");
-        questionOne.remove();
-        console.log("removing questionOneEl");
+        // delay execution of questionTwo() to allow user enough time to read notification of score 
+        setTimeout(() => {
+            
+            // remove questionOne div elements
+            var questionOne = document.querySelector("#question-one");
+            questionOne.remove();
+            console.log("removing questionOneEl");
 
-        questionTwo()
+            questionTwo()
+
+            
+        }, 2000);
     })
 
-    answerChoiceFour.addEventListener('click', function(event) {
+    answerChoiceFour.addEventListener('click', function() {
         
         time += 20
 
-        alert(" Correct! You've earned 20 points. User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Correct! You've earned 20 points. Your score is now "  + time + "."
+        questionOneEl.appendChild(noteText)
 
-         // remove questionOne div elements
-         var questionOne = document.querySelector("#question-one");
-         questionOne.remove();
-         console.log("removing questionOneEl");
+        // delay execution of questionTwo() to allow user enough time to read notification of score 
+        setTimeout(() => {
+            
+            // remove questionOne div elements
+            var questionOne = document.querySelector("#question-one");
+            questionOne.remove();
+            console.log("removing questionOneEl");
 
-        questionTwo();
+            questionTwo()
+
+            
+        }, 2000);
     })
 
  }
@@ -180,6 +216,7 @@ var questionOne = function(){
 
 //question two function
 var questionTwo = function() {
+
     
     //selecting body tag
     var bodyTag = document.querySelector("body");
@@ -217,65 +254,101 @@ var questionTwo = function() {
     questionTwoEl.appendChild(answerChoiceFour);   
         
     // add event listener to buttons
-    answerChoiceOne.addEventListener('click', function(event) {
+    answerChoiceOne.addEventListener('click', function() {
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionTwoEl.appendChild(noteText)
 
-        // remove questionTwo div elements
-        var questionTwo = document.querySelector("#question-two");
-        questionTwo.remove();
-        console.log("removing questionTwoEl");
+        // delay execution of questionThree() to allow user enough time to read notification of score 
+        setTimeout(() => {
 
-        questionThree()
+             // remove questionTwo div elements
+             var questionTwo = document.querySelector("#question-two");
+             questionTwo.remove();
+             console.log("removing questionTwoEl");
+            
+            questionThree()
+    
+         }, 2000);
+
     })
 
-    answerChoiceTwo.addEventListener('click', function(event){
+    answerChoiceTwo.addEventListener('click', function(){
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionTwoEl.appendChild(noteText)
 
-        // remove questionTwo div elements
-        var questionTwo = document.querySelector("#question-two");
-        questionTwo.remove();
-        console.log("removing questionTwoEl");
+        // delay execution of questionThree() to allow user enough time to read notification of score 
+        setTimeout(() => {
 
-        questionThree()
+             // remove questionTwo div elements
+             var questionTwo = document.querySelector("#question-two");
+             questionTwo.remove();
+             console.log("removing questionTwoEl");
+            
+            questionThree()
+    
+         }, 2000);
 
     })
 
-    answerChoiceThree.addEventListener('click', function(event){
+    answerChoiceThree.addEventListener('click', function(){
 
         time += 20
 
-        alert(" Correct! You've earned 20 points. User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Correct! You've earned 20 points. User score is now "  + time + "."
+        questionTwoEl.appendChild(noteText)
 
-        console.log( " User Score is now " + time + ".");
+        // delay execution of questionThree() to allow user enough time to read notification of score 
+        setTimeout(() => {
 
-        // remove questionTwo div elements
-        var questionTwo = document.querySelector("#question-two");
-        questionTwo.remove();
-        console.log("removing questionTwoEl");
-
-        questionThree();
+             // remove questionTwo div elements
+             var questionTwo = document.querySelector("#question-two");
+             questionTwo.remove();
+             console.log("removing questionTwoEl");
+            
+            questionThree()
+    
+         }, 2000);
 
     })
 
-    answerChoiceFour.addEventListener('click', function(event) {
+    answerChoiceFour.addEventListener('click', function() {
         
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Incorrect! Your score is now "  + time + "."
+        questionTwoEl.appendChild(noteText)
 
-        // remove questionTwo div elements
-        var questionTwo = document.querySelector("#question-two");
-        questionTwo.remove();
-        console.log("removing questionTwoEl");
+        // delay execution of questionThree() to allow user enough time to read notification of score 
+        setTimeout(() => {
 
-        questionThree()
+             // remove questionTwo div elements
+             var questionTwo = document.querySelector("#question-two");
+             questionTwo.remove();
+             console.log("removing questionTwoEl");
+            
+            questionThree()
+    
+         }, 2000);
+
     })
 
 }
@@ -322,72 +395,101 @@ var questionThree = function(){
     answerChoiceFour.textContent = "4. square brackets";
     questionThreeEl.appendChild(answerChoiceFour);  
 
-    answerChoiceOne.addEventListener('click', function(event){
+    answerChoiceOne.addEventListener('click', function(){
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
-
-        //remove questionThree div elements 
-        var questionThree = document.querySelector("#question-three");
-        questionThree.remove();
-        console.log("removing questionThree");
-
-
-        conclusionPage()
+         // create text to notify user of current score and if answer is correct/incorrect 
+         var noteText = document.createElement('p')
+         noteText.className = 'answer-note'
+         noteText.textContent = " Incorrect! Your score is now "  + time + "."
+         questionThreeEl.appendChild(noteText)
+ 
+         // delay execution of conclusionPage() to allow user enough time to read notification of score 
+         setTimeout(() => {
+ 
+              // remove questionThree div elements
+              var questionThree = document.querySelector("#question-three");
+              questionThree.remove();
+              console.log("removing questionThreeEl");
+             
+             conclusionPage()
+     
+          }, 2000);
 
     })
 
-    answerChoiceTwo.addEventListener('click', function(event){
+    answerChoiceTwo.addEventListener('click', function(){
         
          time += 20 
 
+        // create text to notify user of current score and if answer is correct/incorrect 
+        var noteText = document.createElement('p')
+        noteText.className = 'answer-note'
+        noteText.textContent = " Correct! You've earned 20 points. User score is now "  + time + "."
+        questionThreeEl.appendChild(noteText)
 
-        alert(" Correct! You've earned 20 points. User score is now "  + time + ".");
+        // delay execution of conclusionPage() to allow user enough time to read notification of score 
+        setTimeout(() => {
 
-        console.log("User score is now " + time + ".");
-
-        //remove questionThree div elements 
-        var questionThree = document.querySelector("#question-three");
-        questionThree.remove();
-        console.log("removing questionThree");
-
-        
-        conclusionPage();
-
-
-
-    })
-
-    answerChoiceThree.addEventListener('click', function(event){
-
-        time -= 20
-
-        alert(" Incorrect! User score is now "  + time + ".");
-
-        //remove questionThree div elements 
-        var questionThree = document.querySelector("#question-three");
-        questionThree.remove();
-        console.log("removing questionThree");
+             // remove questionThree div elements
+             var questionThree = document.querySelector("#question-three");
+             questionThree.remove();
+             console.log("removing questionThreeEl");
+            
+            conclusionPage()
+    
+         }, 2000);
 
 
-        conclusionPage()
 
     })
 
-    answerChoiceFour.addEventListener ('click', function(event){
+    answerChoiceThree.addEventListener('click', function(){
 
         time -= 20
 
-        alert(" Incorrect! User score is now "  + time + ".");
+         // create text to notify user of current score and if answer is correct/incorrect 
+         var noteText = document.createElement('p')
+         noteText.className = 'answer-note'
+         noteText.textContent = " Incorrect! Your score is now "  + time + "."
+         questionThreeEl.appendChild(noteText)
+ 
+         // delay execution of conclusionPage() to allow user enough time to read notification of score 
+         setTimeout(() => {
+ 
+              // remove questionThree div elements
+              var questionThree = document.querySelector("#question-three");
+              questionThree.remove();
+              console.log("removing questionThreeEl");
+             
+             conclusionPage()
+     
+          }, 2000);
 
-        //remove questionThree div elements 
-        var questionThree = document.querySelector("#question-three");
-        questionThree.remove();
-        console.log("removing questionThree");
+    })
 
-       
-        conclusionPage()
+    answerChoiceFour.addEventListener ('click', function(){
+
+        time -= 20
+
+         // create text to notify user of current score and if answer is correct/incorrect 
+         var noteText = document.createElement('p')
+         noteText.className = 'answer-note'
+         noteText.textContent = " Incorrect! Your score is now "  + time + "."
+         questionThreeEl.appendChild(noteText)
+ 
+         // delay execution of conclusionPage() to allow user enough time to read notification of score 
+         setTimeout(() => {
+ 
+              // remove questionThree div elements
+              var questionThree = document.querySelector("#question-three");
+              questionThree.remove();
+              console.log("removing questionThreeEl");
+             
+             conclusionPage()
+     
+          }, 2000);
 
 
     })
