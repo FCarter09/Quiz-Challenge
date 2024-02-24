@@ -11,15 +11,15 @@ var countDown
 // start quiz on intro page
 var startQuiz = function(){
 
+    // message that notifies user the quiz has started
     var startQuizMessage = document.querySelector('.start-notification')
     startQuizMessage.textContent = "The quiz has begun, timer has started at 60 seconds!"
 
-    // gives user time to read startQuizMessage before proceeding to quiz
+    // gives user time to read startQuizMessage before proceeding to questionOne
     setTimeout(() => {
 
-        // alert("The quiz has begun, timer has started at 60 seconds!");
-        timer();
         questionOne();
+        timer();
         
     }, 2000);
     
@@ -79,6 +79,12 @@ beginQuizEl.addEventListener("click", startQuiz);
 
 // question one function
 var questionOne = function(){
+    
+    
+    // remove 'View High Scores' from top of the page
+    viewHighScore = document.querySelector('.high-scores')
+    viewHighScore.remove()
+
 
     // remove intro screen div elements
     var introScreen = document.querySelector(".intro-screen");
@@ -171,11 +177,12 @@ var questionOne = function(){
 
     })
 
-    // create text to notify user of current score and if answer is correct/incorrect 
+    
     answerChoiceThree.addEventListener('click', function(){
 
         time -= 20
 
+        // create text to notify user of current score and if answer is correct/incorrect 
         var noteText = document.createElement('p')
         noteText.className = 'answer-note'
         noteText.textContent = " Incorrect! Your score is now "  + time + "."
@@ -414,6 +421,9 @@ var questionThree = function(){
          noteText.className = 'answer-note'
          noteText.textContent = " Incorrect! Your score is now "  + time + "."
          questionThreeEl.appendChild(noteText)
+
+         // stops timer
+         clearInterval(countDown)
  
          // delay execution of conclusionPage() to allow user enough time to read notification of score 
          setTimeout(() => {
@@ -438,6 +448,9 @@ var questionThree = function(){
         noteText.className = 'answer-note'
         noteText.textContent = " Correct! You've earned 20 points. Your score is now "  + time + "."
         questionThreeEl.appendChild(noteText)
+
+        // stops timer
+        clearInterval(countDown)
 
         // delay execution of conclusionPage() to allow user enough time to read notification of score 
         setTimeout(() => {
@@ -464,6 +477,9 @@ var questionThree = function(){
          noteText.className = 'answer-note'
          noteText.textContent = " Incorrect! Your score is now "  + time + "."
          questionThreeEl.appendChild(noteText)
+
+         // stops timer
+        clearInterval(countDown)
  
          // delay execution of conclusionPage() to allow user enough time to read notification of score 
          setTimeout(() => {
@@ -488,6 +504,9 @@ var questionThree = function(){
          noteText.className = 'answer-note'
          noteText.textContent = " Incorrect! Your score is now "  + time + "."
          questionThreeEl.appendChild(noteText)
+
+         // stops timer
+         clearInterval(countDown)
  
          // delay execution of conclusionPage() to allow user enough time to read notification of score 
          setTimeout(() => {
@@ -517,8 +536,7 @@ var conclusionPage = function() {
     // the users final score is the time remaining
     var finalScore = time
 
-    // stops timer
-    clearInterval(countDown)
+    
 
     // clear time from page
     var endTimer = document.querySelector("#timeRemaining")
@@ -527,6 +545,7 @@ var conclusionPage = function() {
 
     //selecting body tag
     var bodyTag = document.querySelector("body")
+    
 
     // create conclusion div
     var conclusionDiv = document.createElement('div')
@@ -535,13 +554,14 @@ var conclusionPage = function() {
     
 
     // put timer back on page with finalScore as its value
-    var headerEl = document.querySelector('header')
+    var header = document.querySelector('header')
     var timeValue = document.querySelector('.time')
-    headerEl.appendChild(timeValue)
+    header.appendChild(timeValue)
     var spanTime = document.createElement('span')
     spanTime.textContent = finalScore
     spanTime.setAttribute("id",'timeRemaining')
     timeValue.appendChild(spanTime)
+   
 
     // create elements for conclusion page
     var conclusion = document.createElement("h1");
@@ -569,7 +589,6 @@ var conclusionPage = function() {
     submitButton.addEventListener("click", function() {
     // should save final score + initials in local storage. 
     
-    console.log('This is working');
     
     // variable to get value of initialsInput
     var input = document.querySelector(".initialsInput").value
@@ -663,10 +682,10 @@ var finalPage = function() {
     }
 
      // create go back button
-     var goBackButton = document.createElement("button")
-     goBackButton.className = "go-back-button"
-     goBackButton.textContent = "Go back"
-     liButtonDiv.appendChild(goBackButton)
+     var restartButton = document.createElement("button")
+     restartButton.className = "restart-button"
+     restartButton.textContent = "Restart Quiz"
+     liButtonDiv.appendChild(restartButton)
  
      // create clear score button
      var clearScoresButton = document.createElement("button")
@@ -676,7 +695,7 @@ var finalPage = function() {
 
 
     // add event listener to 'go back' button
-    goBackButton.addEventListener("click", function() {
+    restartButton.addEventListener("click", function() {
             
         restartQuiz()
 
@@ -742,6 +761,10 @@ var restartQuiz = function() {
      introScreen.className = ('intro-screen')
      bodyTag.appendChild(introScreen)
 
+    var restartMessage = document.createElement('p')
+    restartMessage.className = ('start-notification')
+    introScreen.appendChild(restartMessage)
+
      var title = document.createElement('h1')
      title.textContent = 'Coding Challenge Quiz'
      title.className = 'title'
@@ -770,13 +793,19 @@ var restartQuiz = function() {
     startQuizButton.addEventListener("click", function(){
 
         // reset timer to 60 seconds
-       
-        alert("The quiz has begun, timer has started at 60 seconds!");
         time = 60
-        timer();
-        questionOne();
 
+        // notify user that quiz has begun with message
+        restartMessage = document.querySelector('.start-notification')
+        restartMessage.textContent = "The quiz has begun, timer has started at 60 seconds!"
+        
+        // notification to appear and be read by user
+        setTimeout(() => {
 
+            questionOne();
+            timer();
+            
+        }, 2000);
 
     });
 
@@ -840,7 +869,7 @@ var viewHighScores = function(){
 
       // create go back button
       var goBackButton = document.createElement("button")
-      goBackButton.className = "go-back-button"
+      goBackButton.className = "restart-button"
       goBackButton.textContent = "Go back"
       liButtonDiv.appendChild(goBackButton)
   

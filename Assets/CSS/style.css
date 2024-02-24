@@ -2,44 +2,53 @@
     box-sizing: border-box;
 }
 
+
+/* header */
 header {
-    padding: 20px;
+   display: flex;
+   justify-content: space-between; /* Items will be positioned at the beginning and end of the header */
+   align-items: center; /* Align items vertically at the center */
+   position: relative; 
+   padding: 20px;
     border-bottom: 2px solid black ;
     margin-bottom: 50px;
     font-size: 12px;
-    font-weight: lighter;
+    font-weight: lighter; 
 
 }
 
-header .high-scores {
-    color: purple;
+
+
+/* view high scores */
+ header .high-scores {
+    color: purple; 
     text-decoration: none;
-    margin-top: 0;
-    text-align: left;
-    font-size: small;
+    font-size: medium;
     cursor: pointer;
     
 }
 
-header .high-scores:hover {
+
+
+/* hover effect */
+.high-scores:hover {
    color: rgb(146, 91, 146);
 }
 
+
+
+/* timer */
 .time {
-    text-align: right;
-    color: black;
-    margin-top: -30px;
-    font-size: medium;
+   
+   position: absolute;
+   right: 0;
+   color: black;
+   font-size: medium;  
 
 }
 
-.timeRemaining {
-   text-align: right;
-    color: black;
-    margin-top: -30px;
-    font-size: medium;
 
-}
+
 
 /* intro screen div */
 .intro-screen {
@@ -127,7 +136,8 @@ header .high-scores:hover {
 /* notification when answer is clicked */
 .answer-note {
  font-style: italic;
- color: grey;
+ font-weight: bold;
+ color: rgb(68, 64, 64);
  margin-left: 375px;
 
 }
@@ -135,7 +145,8 @@ header .high-scores:hover {
 /* start quiz message */
 .start-notification {
    font-style: italic;
-   color: grey;
+   font-weight: bold;
+   color: rgb(68, 64, 64);
 
 }
 
@@ -209,8 +220,8 @@ header .high-scores:hover {
 }
 
 
-/* go back button */
-.go-back-button {
+/* restart quiz button */
+.restart-button {
    background-color: purple;
    color: white;
    border-radius: 15px;
@@ -220,7 +231,7 @@ header .high-scores:hover {
    
 }
 
-.go-back-button:hover {
+.restart-button:hover {
    background-color: rgb(146, 91, 146);
 }
 
